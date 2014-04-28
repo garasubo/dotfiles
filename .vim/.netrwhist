@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/champ/RoboTech/ws12/locus/trunk/robolib'
-let g:netrw_dirhist_2='/home/champ/RoboTech/ws12/locus/trunk/robolib/external/arm-eabi-codesourcery-discovery'
-let g:netrw_dirhist_3='/home/champ/RoboTech/ws12/1ms_interrupt/branches/map/robolib11_trunk/map'
-let g:netrw_dirhist_4='/home/champ/RoboTech/ws12/1ms_interrupt/branches/map'
-let g:netrw_dirhist_5='/home/champ/RoboTech/ws12/locus/trunk/robolib/operate'
-let g:netrw_dirhist_6='/home/champ/RoboTech/ws12/locus/trunk/robolib'
-let g:netrw_dirhist_7='/home/champ/.vim/template'
