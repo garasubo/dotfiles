@@ -19,6 +19,7 @@ auto FileType omlet :setlocal shiftwidth=2
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 " インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+autocmd FileType scala setlocal sw=2 sts=2 ts=2
 
 set statusline=%F%m%r%h%w\ TYPE=%Y\ POS=%04l,%04v\ LEN=%L
 set wildmode=list:longest
@@ -33,8 +34,6 @@ auto FileType java :set foldmethod=marker foldmarker={,}
 
 set encoding=utf8
 set fileencodings=utf-8,iso-2022-jp,sjis,euc-jp
-
-"let twitvim_login = "garasubo_"
 
 let twitvim_browser_cmd = "firefox"
 let twitvim_count = 100
@@ -92,7 +91,14 @@ nmap <Leader>gp :!git push<CR>
 nmap <Leader>ub :Unite buffer<CR>
 nmap <Leader>un :Unite -buffer-name=file file<CR>
 nmap <Leader>ur :Unite file_mru<CR>
-nmap <C-p> :TweetVimSay<CR>
+"tweet
+nmap <Leader>ts :TweetVimSay<CR>
+"gtags
+map <C-g> :Gtags 
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
 
 
 " for neobundle
@@ -116,6 +122,7 @@ NeoBundle 'Shougo/vimproc', {
       \    },
       \ }
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'thinca/vim-localrc'
@@ -143,8 +150,9 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'vim-scripts/errormarker.vim.git'
 NeoBundle 'wincent/Command-T'
-NeoBundle 'vim-script/VimCoder.jar'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'vimwiki/vimwiki'
+NeoBundle 'git://github.com/vim-scripts/VimCoder.jar'
 
 "ふぇぇ☆*✲ﾟ*｡(((´♡‿♡`+)))｡*ﾟ✲*☆10万円ほしいでしゅ
 "
@@ -205,3 +213,9 @@ let g:quickrun_config.processing = {
             \ 'exec': '%c --sketch=%s:p:h --output=/tmp/vim-processing/%s:p:h:t  --run --force',
             \ }
 "!processing-java --sketch="/home/champ/is/enshu3/kenyu/main" --output=/tmp/vim-processing/main --run --force
+
+"vim-wiki
+let g:vimwiki_list = [{'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_html','gohome':'vsplit'}, {'path':'~/Dropbox/dialy','gohome':'vsplist'}]
+set nocompatible
+filetype plugin on
+syntax on
