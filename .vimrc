@@ -35,8 +35,10 @@ auto FileType java :set foldmethod=marker foldmarker={,}
 set encoding=utf8
 set fileencodings=utf-8,iso-2022-jp,sjis,euc-jp
 
-let twitvim_browser_cmd = "firefox"
-let twitvim_count = 100
+" let twitvim_browser_cmd = "firefox"
+" let twitvim_count = 100
+
+set guifont=あずきフォント
 
 
 autocmd FileType scheme :let is_gauche=1
@@ -215,7 +217,11 @@ let g:quickrun_config.processing = {
 "!processing-java --sketch="/home/champ/is/enshu3/kenyu/main" --output=/tmp/vim-processing/main --run --force
 
 "vim-wiki
-let g:vimwiki_list = [{'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_html','gohome':'vsplit'}, {'path':'~/Dropbox/dialy','gohome':'vsplist'}]
+let g:vimwiki_list = [{'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_html','gohome':'vsplit'}, {'path':'~/Dropbox/diary','gohome':'vsplist'},{'path':'~/Dropbox/safegread','path_html':'~/Dropbox/srhtml','gohome':'vsplit'}]
 set nocompatible
 filetype plugin on
 syntax on
+
+" if exists('&ambiwidth')
+"     set ambiwidth=double
+" endif
