@@ -104,14 +104,25 @@ map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
 
+
 " for neobundle
 set rtp+=~/.vim/bundle/neobundle.vim
 
+if !1 | finish | endif
+
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/'))
+    if &compatible
+        set nocompatible               " Be iMproved
+    endif
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-NeoBundle 'gmarik/vundle'
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+
+
 "on github
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
@@ -155,6 +166,9 @@ NeoBundle 'vim-scripts/errormarker.vim.git'
 NeoBundle 'wincent/Command-T'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'vimwiki/vimwiki'
+NeoBundle 'alpaca-tc/alpaca_tags'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'basyura/unite-rails'
 NeoBundle 'git://github.com/vim-scripts/VimCoder.jar'
 
 "ふぇぇ☆*✲ﾟ*｡(((´♡‿♡`+)))｡*ﾟ✲*☆10万円ほしいでしゅ
@@ -165,6 +179,10 @@ NeoBundle 'omlet.vim'
 NeoBundle 'verilog.vim'
 NeoBundle 'verilog_systemverilog.vim'
 NeoBundle 'pyte'
+
+call neobundle#end()
+
+filetype plugin indent on
 
 "localrc.vim
 :let g:localrc_filename = ".local.vimrc"
