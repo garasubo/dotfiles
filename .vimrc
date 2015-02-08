@@ -3,6 +3,7 @@ set autoindent
 set hlsearch
 set wrap
 set list
+set listchars=tab:>-,trail:$
 syntax on
 set foldmethod=syntax
 set encoding=utf-8
@@ -217,7 +218,12 @@ let g:quickrun_config.processing = {
 "!processing-java --sketch="/home/champ/is/enshu3/kenyu/main" --output=/tmp/vim-processing/main --run --force
 
 "vim-wiki
-let g:vimwiki_list = [{'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_html','gohome':'vsplit'}, {'path':'~/Dropbox/diary','gohome':'vsplist'},{'path':'~/Dropbox/safegread','path_html':'~/Dropbox/srhtml','gohome':'vsplit'}]
+let g:vimwiki_list = [{'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_html','gohome':'vsplit'}, 
+    \ {'path':'~/Dropbox/diary','gohome':'vsplist'},
+    \ {'path':'~/Dropbox/mptkread','gohome':'vsplist'},
+    \ {'path':'~/Dropbox/tmread','gohome':'vsplist'},
+    \ {'path':'~/Dropbox/tkmemo','gohome':'vsplist'},
+    \ {'path':'~/Dropbox/safegread','path_html':'~/Dropbox/srhtml','gohome':'vsplit'}]
 set nocompatible
 filetype plugin on
 syntax on
