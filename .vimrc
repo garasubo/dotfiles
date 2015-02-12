@@ -21,6 +21,7 @@ au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 " インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scala setlocal sw=2 sts=2 ts=2
+autocmd FileType ruby setlocal sw=2 sts=2 ts=2
 
 set statusline=%F%m%r%h%w\ TYPE=%Y\ POS=%04l,%04v\ LEN=%L
 set wildmode=list:longest
@@ -169,6 +170,11 @@ NeoBundle 'vimwiki/vimwiki'
 NeoBundle 'alpaca-tc/alpaca_tags'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'basyura/unite-rails'
+NeoBundle 'AndrewRadev/switch.vim'
+NeoBundle 'basyura/unite-rails'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'yuku-t/vim-ref-ri'
 NeoBundle 'git://github.com/vim-scripts/VimCoder.jar'
 
 "ふぇぇ☆*✲ﾟ*｡(((´♡‿♡`+)))｡*ﾟ✲*☆10万円ほしいでしゅ
@@ -245,6 +251,13 @@ let g:vimwiki_list = [{'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_h
 set nocompatible
 filetype plugin on
 syntax on
+
+"rails
+if !exists('loaded_matchit')
+    " matchitを有効化
+    runtime macros/matchit.vim
+endif
+
 
 " if exists('&ambiwidth')
 "     set ambiwidth=double
