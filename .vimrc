@@ -22,6 +22,8 @@ au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scala setlocal sw=2 sts=2 ts=2
 autocmd FileType ruby setlocal sw=2 sts=2 ts=2
+autocmd FileType css setlocal sw=2 sts=2 ts=2
+autocmd FileType scss setlocal sw=2 sts=2 ts=2
 
 set statusline=%F%m%r%h%w\ TYPE=%Y\ POS=%04l,%04v\ LEN=%L
 set wildmode=list:longest
@@ -242,7 +244,9 @@ let g:quickrun_config.processing = {
 "!processing-java --sketch="/home/champ/is/enshu3/kenyu/main" --output=/tmp/vim-processing/main --run --force
 
 "vim-wiki
-let g:vimwiki_list = [{'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_html','gohome':'vsplit'}, 
+let g:vimwiki_list = [ 
+    \ {'path':'~/Dropbox/vimwiki/ls1021a','gohome':'vsplist'},
+    \ {'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_html','gohome':'vsplit'},
     \ {'path':'~/Dropbox/diary','gohome':'vsplist'},
     \ {'path':'~/Dropbox/mptkread','gohome':'vsplist'},
     \ {'path':'~/Dropbox/tmread','gohome':'vsplist'},
