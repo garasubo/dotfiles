@@ -20,6 +20,7 @@ auto FileType omlet :setlocal shiftwidth=2
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 " インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+autocmd FileType javascript     setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scala setlocal sw=2 sts=2 ts=2
 autocmd FileType ruby setlocal sw=2 sts=2 ts=2
 autocmd FileType css setlocal sw=2 sts=2 ts=2
@@ -177,6 +178,7 @@ NeoBundle 'basyura/unite-rails'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'yuku-t/vim-ref-ri'
+NeoBundle 'hewes/unite-gtags'
 NeoBundle 'git://github.com/vim-scripts/VimCoder.jar'
 
 "ふぇぇ☆*✲ﾟ*｡(((´♡‿♡`+)))｡*ﾟ✲*☆10万円ほしいでしゅ
