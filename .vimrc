@@ -26,6 +26,7 @@ autocmd FileType ruby setlocal sw=2 sts=2 ts=2
 autocmd FileType css setlocal sw=2 sts=2 ts=2
 autocmd FileType scss setlocal sw=2 sts=2 ts=2
 autocmd FileType asm setlocal noexpandtab
+autocmd FileType lnk setlocal noexpandtab
 
 set statusline=%F%m%r%h%w\ TYPE=%Y\ POS=%04l,%04v\ LEN=%L
 set wildmode=list:longest
