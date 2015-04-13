@@ -25,6 +25,7 @@ autocmd FileType scala setlocal sw=2 sts=2 ts=2
 autocmd FileType ruby setlocal sw=2 sts=2 ts=2
 autocmd FileType css setlocal sw=2 sts=2 ts=2
 autocmd FileType scss setlocal sw=2 sts=2 ts=2
+autocmd FileType asm setlocal noexpandtab
 
 set statusline=%F%m%r%h%w\ TYPE=%Y\ POS=%04l,%04v\ LEN=%L
 set wildmode=list:longest
@@ -99,7 +100,7 @@ nmap <Leader>ub :Unite buffer<CR>
 nmap <Leader>un :Unite -buffer-name=file file<CR>
 nmap <Leader>ur :Unite file_mru<CR>
 "tweet
-nmap <Leader>ts :TweetVimSay<CR>
+nmap <C-t>s :TweetVimSay<CR>
 "gtags
 map <C-g> :Gtags 
 map <C-h> :Gtags -f %<CR>
