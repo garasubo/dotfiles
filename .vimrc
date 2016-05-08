@@ -25,6 +25,7 @@ autocmd FileType scala setlocal sw=2 sts=2 ts=2
 autocmd FileType ruby setlocal sw=2 sts=2 ts=2
 autocmd FileType css setlocal sw=2 sts=2 ts=2
 autocmd FileType scss setlocal sw=2 sts=2 ts=2
+autocmd FileType ts setlocal sw=2 sts=2 ts=2
 autocmd FileType asm setlocal noexpandtab
 autocmd FileType lnk setlocal noexpandtab
 
@@ -181,7 +182,7 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'yuku-t/vim-ref-ri'
 NeoBundle 'hewes/unite-gtags'
-NeoBundle 'git://github.com/vim-scripts/VimCoder.jar'
+NeoBundle 'leafgarland/typescript-vim'
 
 "ふぇぇ☆*✲ﾟ*｡(((´♡‿♡`+)))｡*ﾟ✲*☆10万円ほしいでしゅ
 "
@@ -250,6 +251,7 @@ let g:quickrun_config.processing = {
 "vim-wiki
 let g:vimwiki_list = [ 
     \ {'path':'~/Dropbox/vimwiki/ls1021a','gohome':'vsplist'},
+    \ {'path':'~/Dropbox/vimwiki/linux-sunxi','gohome':'vsplist'},
     \ {'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_html','gohome':'vsplit'},
     \ {'path':'~/Dropbox/diary','gohome':'vsplist'},
     \ {'path':'~/Dropbox/mptkread','gohome':'vsplist'},
