@@ -37,3 +37,8 @@ export NVM_DIR="/home/garasubo/.nvm"
 
 # zplug
 source $HOME/.zsh/zplug.zsh
+
+# local setting
+if [ -e "$HOME/.zshrc.local" ]; then
+    source "$HOME/.zshrc.local"
+fi

@@ -1,7 +1,7 @@
 export ZPLUG_HOME=$HOME/dotfiles/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug "zsh-users/zsh-history-substring-search", hook-build:"__zsh_version 4.3"
+zplug "zsh-users/zsh-history-substring-search"
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down

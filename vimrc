@@ -111,89 +111,103 @@ map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
 
-
-" for neobundle
-set rtp+=~/.vim/bundle/neobundle.vim
-
-if !1 | finish | endif
-
-if has('vim_starting')
-    if &compatible
-        set nocompatible               " Be iMproved
-    endif
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Required:
+set runtimepath^=/Users/takumi/.vim/repos/github.com/Shougo/dein.vim
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+" Required:
+call dein#begin(expand('/Users/takumi/.vim'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/vimshell')
+call dein#add('tomtom/tcomment_vim')
+call dein#add('tpope/vim-surround')
+call dein#add('thinca/vim-localrc')
+call dein#add('leafgarland/typescript-vim')
+call dein#add('tpope/vim-fugitive')
+call dein#add('gregsexton/gitv')
+call dein#add('itchyny/lightline.vim')
+call dein#add('vimwiki/vimwiki')
+call dein#add('tpope/vim-endwise')
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
 
 
 
 "on github
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'thinca/vim-localrc'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'supermomonga/unite-sudden-death'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'glidenote/octoeditor.vim'
-NeoBundle 'chazmcgarvey/vimcoder'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'sophacles/vim-processing'
-NeoBundle 'gregsexton/gitv'
-NeoBundle 'basyura/TweetVim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'basyura/twibill.vim'
-NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'basyura/bitly.vim'
-NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'claco/jasmine.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'rhysd/clever-f.vim'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'szw/vim-tags'
-NeoBundle 'vim-scripts/errormarker.vim.git'
-NeoBundle 'wincent/Command-T'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'vimwiki/vimwiki'
-NeoBundle 'alpaca-tc/alpaca_tags'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'basyura/unite-rails'
-NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'basyura/unite-rails'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'yuku-t/vim-ref-ri'
-NeoBundle 'hewes/unite-gtags'
-NeoBundle 'leafgarland/typescript-vim'
+" NeoBundle 'Shougo/neocomplcache'
+" NeoBundle 'Shougo/vimfiler'
+" NeoBundle 'Shougo/vimproc', {
+"       \ 'build' : {
+"       \     'windows' : 'make -f make_mingw32.mak',
+"       \     'cygwin' : 'make -f make_cygwin.mak',
+"       \     'mac' : 'make -f make_mac.mak',
+"       \     'unix' : 'make -f make_unix.mak',
+"       \    },
+"       \ }
+" NeoBundle 'Shougo/neomru.vim'
+" NeoBundle 'supermomonga/unite-sudden-death'
+" NeoBundle 'thinca/vim-quickrun'
+" NeoBundle 'glidenote/octoeditor.vim'
+" NeoBundle 'chazmcgarvey/vimcoder'
+" NeoBundle 'plasticboy/vim-markdown'
+" NeoBundle 'tyru/open-browser.vim'
+" NeoBundle 'sophacles/vim-processing'
+" NeoBundle 'basyura/TweetVim'
+" NeoBundle 'mattn/webapi-vim'
+" NeoBundle 'basyura/twibill.vim'
+" NeoBundle 'h1mesuke/unite-outline'
+" NeoBundle 'basyura/bitly.vim'
+" NeoBundle 'derekwyatt/vim-scala'
+" NeoBundle 'kchmck/vim-coffee-script'
+" NeoBundle 'claco/jasmine.vim'
+" NeoBundle 'nathanaelkane/vim-indent-guides'
+" NeoBundle 'rhysd/clever-f.vim'
+" NeoBundle 'majutsushi/tagbar'
+" NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'szw/vim-tags'
+" NeoBundle 'vim-scripts/errormarker.vim.git'
+" NeoBundle 'wincent/Command-T'
+" NeoBundle 'alpaca-tc/alpaca_tags'
+" NeoBundle 'tpope/vim-rails'
+" NeoBundle 'basyura/unite-rails'
+" NeoBundle 'AndrewRadev/switch.vim'
+" NeoBundle 'basyura/unite-rails'
+" NeoBundle 'thinca/vim-ref'
+" NeoBundle 'yuku-t/vim-ref-ri'
+" NeoBundle 'hewes/unite-gtags'
 
 "ふぇぇ☆*✲ﾟ*｡(((´♡‿♡`+)))｡*ﾟ✲*☆10万円ほしいでしゅ
 "
 "on www.vim.org
-NeoBundle 'Align'
-NeoBundle 'omlet.vim'
-NeoBundle 'verilog.vim'
-NeoBundle 'verilog_systemverilog.vim'
-NeoBundle 'pyte'
+" NeoBundle 'Align'
+" NeoBundle 'omlet.vim'
+" NeoBundle 'verilog.vim'
+" NeoBundle 'verilog_systemverilog.vim'
+" NeoBundle 'pyte'
 
-call neobundle#end()
 
 filetype plugin indent on
 
