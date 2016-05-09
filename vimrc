@@ -117,10 +117,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/takumi/.vim/repos/github.com/Shougo/dein.vim
+set runtimepath^=$HOME/.vim/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/Users/takumi/.vim'))
+call dein#begin(expand('$HOME/.vim'))
 
 " Let dein manage dein
 " Required:
@@ -128,6 +128,8 @@ call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
 call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('Shougo/vimshell')
 call dein#add('tomtom/tcomment_vim')
@@ -139,6 +141,7 @@ call dein#add('gregsexton/gitv')
 call dein#add('itchyny/lightline.vim')
 call dein#add('vimwiki/vimwiki')
 call dein#add('tpope/vim-endwise')
+call dein#add('rhysd/clever-f.vim')
 
 " Required:
 call dein#end()
@@ -167,7 +170,6 @@ endif
 "       \     'unix' : 'make -f make_unix.mak',
 "       \    },
 "       \ }
-" NeoBundle 'Shougo/neomru.vim'
 " NeoBundle 'supermomonga/unite-sudden-death'
 " NeoBundle 'thinca/vim-quickrun'
 " NeoBundle 'glidenote/octoeditor.vim'
@@ -184,7 +186,6 @@ endif
 " NeoBundle 'kchmck/vim-coffee-script'
 " NeoBundle 'claco/jasmine.vim'
 " NeoBundle 'nathanaelkane/vim-indent-guides'
-" NeoBundle 'rhysd/clever-f.vim'
 " NeoBundle 'majutsushi/tagbar'
 " NeoBundle 'scrooloose/nerdtree'
 " NeoBundle 'szw/vim-tags'
@@ -241,9 +242,6 @@ set guifont=Inconsolata-Powerline:h11
 
 "colorscheme pyte
 
-"
-"octoeditor
-let g:octopress_path = "$HOME/Documents/octopress/"
 
 "command! -nargs=? OctNewPost call octopress#new_article(<q-args>)
 "let g:octopress_article_ext = "markdown"
