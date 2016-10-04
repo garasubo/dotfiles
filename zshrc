@@ -55,4 +55,8 @@ if [ -e "$HOME/.zshrc.local" ]; then
     source "$HOME/.zshrc.local"
 fi
 
+export PATH="/home/garasubo/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 precmd(){ vcs_info }
