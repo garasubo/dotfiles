@@ -12,7 +12,19 @@ setopt hist_ignore_space
 
 autoload -U promptinit; promptinit
 
-prompt redhat
+# show git branch name
+setopt prompt_subst
+autoload -Uz vcs_info
+
+zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
+zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
+zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'
+zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
+
+PROMPT='[%*][%F{magenta}%n%f@%F{green}%U%m%u%f:%F{blue}%B%d%f%b]
+$ '
+RPROMPT='[${vcs_info_msg_0_}]'
+SPROMPT='correct: %R -> %r ? '
 
 export SUDO_EDITOR='rvi'
 
@@ -33,7 +45,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # OPAM configuration
-. /home/garasubo/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # zplug
 source $HOME/.zsh/zplug.zsh
@@ -42,3 +54,5 @@ source $HOME/.zsh/zplug.zsh
 if [ -e "$HOME/.zshrc.local" ]; then
     source "$HOME/.zshrc.local"
 fi
+
+precmd(){ vcs_info }
