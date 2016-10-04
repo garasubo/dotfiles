@@ -142,6 +142,7 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('vimwiki/vimwiki')
 call dein#add('tpope/vim-endwise')
 call dein#add('rhysd/clever-f.vim')
+call dein#add('derekwyatt/vim-scala')
 
 " Required:
 call dein#end()
