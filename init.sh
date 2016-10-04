@@ -14,6 +14,10 @@ if [ ! -e $HOME/.vimperatorrc ]; then
     ln -s $HOME/dotfiles/vimperatorrc $HOME/.vimperatorrc
 fi
 
+if [ ! -e $HOME/.ideavimrc ]; then
+    ln -s $HOME/dotfiles/ideavimrc $HOME/.ideavimrc
+fi
+
 if [ ! -e $HOME/.vim/repos/github.com/Shougo/dein.vim ]; then
     curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
     sh ./installer.sh ~/.vim
