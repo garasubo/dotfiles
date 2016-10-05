@@ -66,19 +66,6 @@ let IM_CtrlIBusPython = 1
 let g:neocomplcache_enable_at_startup = 0 "起動時に無効
 let g:neocomplcache_disable_auto_complete = 1
 
-" source explore
-" Open and close all the three plugins on the same time
-nmap <F8>   :TrinityToggleAll<CR>
-
-" Open and close the srcexpl.vim separately
-nmap <F9>   :TrinityToggleSourceExplorer<CR>
-
-" Open and close the taglist.vim separately
-nmap <F10>  :TrinityToggleTagList<CR>
-
-" Open and close the NERD_tree.vim separately
-nmap <F11>  :TrinityToggleNERDTree<CR> 
-
 "NERD_tree
 let g:NERDTreeHijackNetrw = 0
 
@@ -90,17 +77,17 @@ filetype off
 nmap <F5>   :make<CR>
 nmap <C-F5>   :make clean all<CR>
 nmap <F6>   :VimShellPop<CR>make write<CR>
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>ga :Gwrite<CR>
-nmap <Leader>gb :Gblame<CR>
-nmap <Leader>gc :Gcommit<CR>
-nmap <Leader>gd :Gdiff<CR>
-nmap <Leader>gv :Gitv --all<CR>
-nmap <Leader>gp :!git push<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>ga :Gwrite<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gv :Gitv --all<CR>
+nnoremap <Leader>gp :!git push<CR>
 "<Leader>u*はuniteにバインドしよう.jp
-nmap <Leader>ub :Unite buffer<CR>
-nmap <Leader>un :Unite -buffer-name=file file<CR>
-nmap <Leader>ur :Unite file_mru<CR>
+nnoremap <Leader>ub :Unite buffer<CR>
+nnoremap <Leader>un :Unite -buffer-name=file file<CR>
+nnoremap <Leader>ur :Unite file_mru<CR>
 "tweet
 nmap <C-t>s :TweetVimSay<CR>
 "gtags
@@ -263,6 +250,7 @@ let g:quickrun_config.processing = {
 
 "vim-wiki
 let g:vimwiki_list = [ 
+    \ {'path':'~/Dropbox/vimwiki/memo','gohome':'vsplist'},
     \ {'path':'~/Dropbox/vimwiki/ls1021a','gohome':'vsplist'},
     \ {'path':'~/Dropbox/vimwiki/linux-sunxi','gohome':'vsplist'},
     \ {'path':'~/Dropbox/tkread','path_html':'~/Dropbox/tkread_html','gohome':'vsplit'},
