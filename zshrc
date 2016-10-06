@@ -11,6 +11,7 @@ setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
 autoload -U promptinit; promptinit
+autoload -Uz compinit && compinit
 
 # show git branch name
 setopt prompt_subst
