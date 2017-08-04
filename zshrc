@@ -17,6 +17,10 @@ autoload -Uz compinit && compinit
 setopt prompt_subst
 autoload -Uz vcs_info
 
+# zplug
+source $HOME/.zsh/zplug.zsh
+
+
 zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'
@@ -31,6 +35,8 @@ export SUDO_EDITOR='rvi'
 
 alias vi='vim'
 alias minicom='LANG=C minicom'
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 
 export HISTFILE=${HOME}/.zsh_history
 export HISTSIZE=1000
@@ -48,9 +54,6 @@ export NVM_DIR="$HOME/.nvm"
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
-# zplug
-source $HOME/.zsh/zplug.zsh
-
 # local setting
 if [ -e "$HOME/.zshrc.local" ]; then
     source "$HOME/.zshrc.local"
@@ -61,3 +64,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 precmd(){ vcs_info }
+
+export PATH=$PATH:/home/garasubo/bin
+
+source '/home/garasubo/lib/azure-cli/az.completion'
