@@ -12,7 +12,7 @@ bindkey '^[[B' history-substring-search-down
 
 zplug "plugins/git",   from:oh-my-zsh, if:"(( $+commands[git] ))"
 
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 zplug "mrowa44/emojify", as:command
 
