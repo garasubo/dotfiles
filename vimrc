@@ -28,6 +28,10 @@ autocmd FileType scss setlocal sw=2 sts=2 ts=2
 autocmd FileType ts setlocal sw=2 sts=2 ts=2
 autocmd FileType asm setlocal noexpandtab
 autocmd FileType lnk setlocal noexpandtab
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 set statusline=%F%m%r%h%w\ TYPE=%Y\ POS=%04l,%04v\ LEN=%L
 set wildmode=list:longest
@@ -130,6 +134,7 @@ call dein#add('vimwiki/vimwiki')
 call dein#add('tpope/vim-endwise')
 call dein#add('rhysd/clever-f.vim')
 call dein#add('derekwyatt/vim-scala')
+call dein#add('racer-rust/vim-racer')
 
 " Required:
 call dein#end()
@@ -268,6 +273,11 @@ if !exists('loaded_matchit')
     " matchitを有効化
     runtime macros/matchit.vim
 endif
+
+"racer
+set hidden
+let g:racer_cmd = "~/.cargo/bin/racer/bin"
+
 
 
 " if exists('&ambiwidth')
