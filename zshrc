@@ -27,7 +27,7 @@ zstyle ':vcs_info:*' formats '%s][* %F{green}%b%f'
 zstyle ':vcs_info:*' actionformats '%s][* %F{green}%b%f(%F{red}%a%f)'
 
 PROMPT='[%*][%F{magenta}%n%f@%F{green}%U%m%u%f:%F{blue}%B%d%f%b]
-$ '
+ (๑òωó๑)۶$ '
 RPROMPT='[${vcs_info_msg_0_}]'
 SPROMPT='correct: %R -> %r ? '
 
