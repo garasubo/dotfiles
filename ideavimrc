@@ -1,2 +1,4 @@
-nnoremap : ;
-nnoremap ; :
+"nnoremap : ;
+"nnoremap ; :
+
+inoremap <silent> <C-[> <Esc>

@@ -99,3 +99,7 @@ if [ -s "$HOME"/.pyenv ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/takumi/.sdkman"
+[[ -s "/home/takumi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/takumi/.sdkman/bin/sdkman-init.sh"
