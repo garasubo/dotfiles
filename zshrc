@@ -32,6 +32,7 @@ RPROMPT='[${vcs_info_msg_0_}]'
 SPROMPT='correct: %R -> %r ? '
 
 export SUDO_EDITOR='rvi'
+export EDITOR='vim'
 
 alias vi='vim'
 alias minicom='LANG=C minicom'
