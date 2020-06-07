@@ -18,6 +18,10 @@ if [ ! -e $HOME/.ideavimrc ]; then
     ln -s $HOME/dotfiles/ideavimrc $HOME/.ideavimrc
 fi
 
+if [ ! -e $HOME/.tmux.conf ]; then
+    ln -s $HOME/dotfiles/tmux.conf $HOME/.tmux.conf
+fi
+
 if [ ! -e $HOME/.vim/repos/github.com/Shougo/dein.vim ]; then
     curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
     sh ./installer.sh ~/.vim
