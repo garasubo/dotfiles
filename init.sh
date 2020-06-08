@@ -22,6 +22,11 @@ if [ ! -e $HOME/.tmux.conf ]; then
     ln -s $HOME/dotfiles/tmux.conf $HOME/.tmux.conf
 fi
 
+if [ ! -e $HOME/.tmux/plugins/tpm ]; then
+    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+fi
+
+
 if [ ! -e $HOME/.vim/repos/github.com/Shougo/dein.vim ]; then
     curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
     sh ./installer.sh ~/.vim
