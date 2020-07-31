@@ -96,8 +96,9 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/bin
 
 if [ -s "$HOME"/.pyenv ]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
@@ -110,4 +111,9 @@ if [ -e "$HOME/env/etc/indeedrc" ]; then
     . "$HOME/env/etc/indeedrc"
 fi
 
+if [ -e "$HOME/bin/google-cloud-sdk/path.zsh.inc" ]; then
+    . "$HOME/bin/google-cloud-sdk/path.zsh.inc"
+fi
+
 # END env Setup -- Managed by Ansible DO NOT EDIT.
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
