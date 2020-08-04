@@ -1,4 +1,4 @@
-
+fpath=(~/.zsh/completion ~/.zsh/completion.local $fpath)
 autoload -U compinit; compinit
 
 setopt auto_cd

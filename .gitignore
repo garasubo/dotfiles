@@ -1,3 +1,4 @@
 *.orig
 *.swp
 installer.sh
+zsh/completion.local
