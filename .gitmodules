@@ -1,3 +1,6 @@
 [submodule "zplug"]
 	path = zplug
 	url = https://github.com/zplug/zplug
+[submodule "vim/pack/start/vim-fugitive"]
+	path = vim/pack/tpope/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git

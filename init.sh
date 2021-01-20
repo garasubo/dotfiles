@@ -2,6 +2,10 @@ if [ ! -e $HOME/.vimrc ]; then
     ln -s $HOME/dotfiles/vimrc $HOME/.vimrc
 fi
 
+if [ ! -e $HOME/.vim ]; then
+    ln -s $HOME/dotfiles/vim $HOME/.vim
+fi
+
 if [ ! -e $HOME/.zshrc ]; then
     ln -s $HOME/dotfiles/zshrc $HOME/.zshrc
 fi
@@ -32,3 +36,4 @@ if [ ! -e $HOME/.vim/repos/github.com/Shougo/dein.vim ]; then
     sh ./installer.sh ~/.vim
 fi
 
+git submodule sync --recursive
