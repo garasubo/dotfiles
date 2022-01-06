@@ -97,7 +97,7 @@ export PATH=$PATH:$HOME/bin
 
 if [ -s "$HOME"/.pyenv ]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
 fi
 
@@ -117,3 +117,4 @@ fi
 
 # END env Setup -- Managed by Ansible DO NOT EDIT.
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
