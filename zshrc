@@ -102,19 +102,17 @@ if [ -s "$HOME"/.pyenv ]; then
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/takumi/.sdkman"
-[[ -s "/home/takumi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/takumi/.sdkman/bin/sdkman-init.sh"
-# BEGIN env Setup -- Managed by Ansible DO NOT EDIT.
-
-# Single-brace syntax because this is required in bash and sh alike
-if [ -e "$HOME/env/etc/indeedrc" ]; then
-    . "$HOME/env/etc/indeedrc"
-fi
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 if [ -e "$HOME/bin/google-cloud-sdk/path.zsh.inc" ]; then
     . "$HOME/bin/google-cloud-sdk/path.zsh.inc"
 fi
 
-# END env Setup -- Managed by Ansible DO NOT EDIT.
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[[ -s "/home/linuxbrew/.linuxbrew" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+[[ -s "$(brew --prefix asdf)/libexec/asdf.sh" ]] && . $(brew --prefix asdf)/libexec/asdf.sh
+
