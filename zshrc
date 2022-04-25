@@ -116,3 +116,5 @@ fi
 
 [[ -s "$(brew --prefix asdf)/libexec/asdf.sh" ]] && . $(brew --prefix asdf)/libexec/asdf.sh
 
+# For golang
+export PATH=$PATH:/usr/local/go/bin
