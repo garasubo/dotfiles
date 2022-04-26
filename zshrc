@@ -112,7 +112,8 @@ fi
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[[ -s "/home/linuxbrew/.linuxbrew" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-[[ -s "$(brew --prefix asdf)/libexec/asdf.sh" ]] && . $(brew --prefix asdf)/libexec/asdf.sh
+if [[ -s "/home/linuxbrew/.linuxbrew" ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    [[ -s "$(brew --prefix asdf)/libexec/asdf.sh" ]] && . $(brew --prefix asdf)/libexec/asdf.sh
+fi
 
